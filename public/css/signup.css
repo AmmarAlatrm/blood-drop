@@ -1,0 +1,283 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Rubik+Beastly&display=swap');
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 3px 5px 5px 0;
+  background:  red;
+border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:red; 
+}
+
+.bg-gray{
+  background-color: rgba(132, 130, 130, 0.46);
+}  
+
+/* body{
+  --bs-body-bg: rgba(132, 130, 130, 0.46);
+  background-color: var(--bs-body-bg);
+} */
+
+/* border center */
+.b-r-10{ 
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+/* B-Drop */
+.m-t-3 {
+  color: red;
+  font-family: Rubik Beastly ;
+   font-size: xx-large;
+  position: relative;
+
+}
+.m-t-3:hover {
+  letter-spacing: 2px;
+}
+
+/* img blood */
+.img {
+  position: relative;
+  top: -6px;
+  left: 9px;
+}
+
+/* home */
+.nav-link{
+  font-family:":'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+}
+/* .nav-link:hover{
+letter-spacing: 2px;
+transition: 1s;
+ text-decoration:red solid underline;
+} */
+.nav-link.active {
+  color: red;
+}
+
+/* border nav */
+.navbar {
+  border-bottom: 4px solid red;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+    /* ///////////END NAVBAR//////////////// */
+
+
+   
+   
+    .container { 
+        border-radius: 2%;
+      background-color: #f80707;
+        text-align: center;
+        /* border: 2px solid red; */
+        /* padding: 0spx; إضافة هامش داخلي للحدود */
+        /* background-color: #f0f0f0; خلفية رمادية */
+    }
+ 
+
+
+footer{
+  margin-top: 2rem;
+  border-top: 1px solid #000;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  
+
+}  
+.btn-floating{
+  border-color: #b40404;
+}
+
+
+
+
+
+
+.signup-form {
+  background-color: #eeeeee;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 25px auto;
+  max-width: 800px;
+}
+.signup-form h2 {
+  color: red;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.signup-form .btn-red {
+  background-color: red;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+} 
+ .signup-form .btn-red:hover {
+  background-color: darkred;
+} 
+/* .signup-form .text-center {
+  margin-top: 20px;
+  color: #6c757d;
+} */
+.form-group {
+  margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+/* 
+.user {
+  margin: 0 auto;
+  border-radius: 20px;
+  display: block;
+  margin-bottom:15px; */
+  
+/* }
+
+h3 {
+  margin: 0;
+  padding: 0 0 20px;
+  color: #ff2420;
+  text-align: center
+} */
+
+/* .signin{
+  color: #ff0000;
+  font-size: 34px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}  */
+/* 
+.Sign-Up select {
+  border: none;
+  border-bottom: 2px solid red;
+  outline: none;
+  height: 40px;
+  background: transparent;
+  font-size: 16px;
+  padding-left: 20px;
+  box-sizing: border-box;
+} */
+/* .loginBox option{
+  background: #9f9e9e; */
+/* } */
+
+
+/* .Sign-Up input,
+.Sign-Up select {
+  width: 100%;
+  margin-bottom: 20px;
+  background: #9f9e9e; */
+
+
+input::placeholder {
+  color : rgb(5, 1, 1);
+  font-weight: bold;
+}
+section ,option{
+  font-weight: bold;
+
+}
+
+
+
+ 
+ .Sign-Up input,select[type="text"],
+.Sign-Up input,select[type="password"],
+.Sign-Up input,select[type="number"],
+.Sign-Up select {
+  border: none;
+  border-bottom: 2px solid red;
+  outline: none;
+  height: 40px;
+  color: #15022c;
+  background: transparent;
+  font-size: 16px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  /* background-color: chartreuse; */
+} 
+ 
+.Sign-Up input[type="text"]:hover,
+.Sign-Up  input[type="password"]:hover, 
+.Sign-Up input[type="number"]:hover,
+
+.Sign-Up  select:hover {  
+  color: rgb(9, 1, 1); 
+   border: 1px solid #c30000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, .55), 0 0 10px rgba(255, 0, 0, .55), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
+} 
+
+.Sign-Up input,select[type="text"]:focus,
+.Sign-Up input,select[type="number"]:focus,
+.Sign-Up input,select[type="password"]:focus
+ {
+  border-bottom: 2px solid red;
+  /* background-color: rgb(14, 235, 162); */
+}  
+ 
+ input[type="submit"] {
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 40px;
+  width: 500PX;
+  font-size: 16px;
+  background: red;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer
+}
+
+ /* .Sign-Up a {
+  color: #262626;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  display: block
+}  */
+#Already{
+  font-weight: bold;
+ 
+
+}
+#Already:hover{
+  color: red;
+}
+
+/* //////////////////END LOGIN//////////////  */
+
+
+/* footer img */
+.imge{
+  position: relative;
+  top: -3px;
+  left: 9px;
+}  

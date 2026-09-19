@@ -1,0 +1,241 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Rubik+Beastly&display=swap');
+ /* width */
+ ::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 3px 5px 5px 0;
+  background:  red;
+border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:red; 
+}
+
+ 
+body{
+  --bs-body-bg: rgba(132, 130, 130, 0.46);
+  background-color: var(--bs-body-bg);
+}
+
+/* border center */
+.b-r-10{ 
+  margin-top:2rem;
+  height: 439px;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+/* B-Drop */
+.m-t-3 {
+  color: red;
+  font-family: Rubik Beastly ;
+   font-size: xx-large;
+  position: relative;
+
+}
+.m-t-3:hover {
+  letter-spacing: 2px;
+}
+
+/* img blood */
+.img {
+  position: relative;
+  top: -6px;
+  left: 9px;
+  /* font-weight: bold; */
+}
+
+
+.bloodw{
+font-weight:bold;
+}
+h2{
+  font-weight:bold;
+}
+
+/* home */
+.nav-link{
+  font-family:":'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+}
+.nav-link:hover{
+letter-spacing: 2px;
+transition: 1s;
+ text-decoration:red solid underline;
+}
+
+
+
+/* border nav */
+.navbar {
+  border-bottom: 4px solid red;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* styles.css */
+.nav-link.active {
+  font-weight: bold;
+  color: red !important;
+} 
+    /* ///////////END NAVBAR//////////////// */
+
+
+
+
+
+
+.containert {
+  /* background-color: aqua; */
+
+  margin: 20px;
+  /* padding: 20px; */
+  
+  margin-left: 100px; /* إزالة التباعد من الجهة اليسرى */
+  padding-left: 10px; /* إزالة التباعد الداخلي من الجهة اليسرى */
+}
+
+.contact-title {
+  color: red;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p.lead {
+  font-family: bold;
+  line-height: 1.888;
+  font-size:25px;
+  /* color: #333; */
+}
+
+.form-container {
+  max-width: 7000px;  
+  margin: 0 auto;
+} 
+
+ 
+
+
+
+
+
+
+
+   .loginBox select {
+    border: none;
+    border-bottom: 2px solid red;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  .loginBox option{
+    background: #9f9e9e;
+  }
+   
+  
+  .loginBox input,
+  .loginBox select {
+    width: 100%;
+    margin-bottom: 20px;
+    /* background: #9f9e9e; */
+  
+  } 
+   input {
+    background-color: lightgray; /* لون الخلفية */
+    /* color: black; لون النص */
+   }  
+  /* input::placeholder {
+    color : rgb(5, 1, 1);
+  } */
+  
+  /* .loginBox input {
+    color: #000509;
+    background: #9f9e9e; 
+  } */
+  
+   .loginBox input,select[type="text"],
+  .loginBox input,select[type="password"],
+  .loginBox select:hover {
+    border: none;
+    border-bottom: 2px solid red;
+    outline: none;
+    height: 40px;
+    color: #15022c;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box
+  }  
+   
+  .loginBox input[type="text"]:hover,
+  .loginBox input[type="password"]:hover,
+  .loginBox select:hover {  
+    /* color: white; */
+     border: 1px solid #c30000;
+    box-shadow: 0 0 5px rgba(255, 0, 0, .55), 0 0 10px rgba(255, 0, 0, .55), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
+  }
+  
+  .loginBox input,select[type="text"]:focus,
+  .loginBox input,select[type="password"]:focus {
+    border-bottom: 2px solid red
+  }  
+
+  .loginBox button[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: red;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer
+  }
+  
+  /* .inputBox {
+    position: relative
+  } */
+/*   
+  .inputBox span {
+    position: absolute;
+    top: 10px;
+    color: red
+  } */
+  .loginBox a {
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block
+  }
+  
+  .login:hover {
+    color: red;
+  }
+       /* CSS لتخصيص أنماط الخيارات */
+       select.text-dark option {
+        background-color: white;
+      }
+    /* CSS لتغيير لون الخيار عند تمرير الماوس */
+    select.text-dark option:hover {
+      background-color: yellow;
+    }
+    .option:hover {
+      background-color: #a40000; /* تغيير لون الخلفية عند تمرير الماوس */
+      color: #333; /* تغيير لون النص عند تمرير الماوس */
+  }
