@@ -9,7 +9,8 @@ use App\Models\hospital;
 
 
 use App\Http\Controllers\Auth\AuthController;
-
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminAuthController;
 
 Route::get('/', [AuthController::class, 'index'])->name('index');
 
@@ -57,7 +58,26 @@ Route::get('Donorshos',function(){
 });
 Route::get('search',[AuthController::class,'search'])->name('search');
 
+Route::prefix('admin')->group(function () {
+    Route::get('/hospitals/pending', [AdminController::class, 'pendingHospitals'])->name('admin.hospitals.pending');
+    Route::post('/hospitals/approve/{id}', [AdminController::class, 'approveHospital'])->name('admin.hospitals.approve');
+    Route::delete('/hospitals/reject/{id}', [AdminController::class, 'rejectHospital'])->name('admin.hospitals.reject');
+});
 
 
+
+// مسارات الأدمن غير المحمية (صفحة تسجيل الدخول)
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+
+    // مسارات الأدمن المحمية (تتطلب تسجيل دخول كأدمن)
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin.dashboard');
+        Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+        // ضع هنا مسارات المراجعة اليدوية للمشافي التي ناقشناها سابقاً
+    });
+});
 
 ?>

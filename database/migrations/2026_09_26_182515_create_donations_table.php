@@ -6,26 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->index('userid');
-            $table->index('hospitalid');
-            $table->date('dondate')->notnull();
-            $table->integer('volume')->notnull();
-            $table->foreignId('userid')->references('id')->on('userinfos');
-            $table->foreignId('hospitalid')->references('id')->on('hospitals');
+            // تم الربط مع جدول users الأساسي للمتبرع، ومع المشفى
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('hospital_id')->constrained('hospitals')->cascadeOnDelete();
+
+            $table->date('dondate');
+            $table->integer('volume');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('donations');

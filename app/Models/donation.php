@@ -5,7 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class donation extends Model
+class Donation extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'hospital_id',
+        'dondate',
+        'volume',
+    ];
+
+    // --- العلاقات ---
+
+    /**
+     * العلاقة العكسية: التبرع قام به مستخدم واحد (متبرع)
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * العلاقة العكسية: التبرع تم في مشفى واحد
+     */
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
 }

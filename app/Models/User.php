@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,37 +10,50 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    // الحقول المسموح بتعبئتها
     protected $fillable = [
-        'name',
         'username',
         'password',
+        'usertype',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    // إخفاء كلمة المرور عند جلب البيانات
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+    // تشفير كلمة المرور تلقائياً قبل حفظها في قاعدة البيانات
+    protected $casts = [
+        'password' => 'hashed',
+    ];
+
+    // --- العلاقات ---
+
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * علاقة 1-لـ-1 مع جدول userinfos
+     * (إذا كان المستخدم نوعه 'normal' أي متبرع)
      */
-    protected function casts(): array
+    public function userinfo()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->hasOne(Userinfo::class);
+    }
+
+    /**
+     * علاقة 1-لـ-1 مع جدول hospitals
+     * (إذا كان المستخدم نوعه 'hospital')
+     */
+    public function hospital()
+    {
+        return $this->hasOne(Hospital::class);
+    }
+
+    /**
+     * علاقة 1-لـ-متعدد مع جدول donations
+     * (جلب جميع تبرعات هذا المستخدم)
+     */
+    public function donations()
+    {
+        return $this->hasMany(Donation::class);
     }
 }

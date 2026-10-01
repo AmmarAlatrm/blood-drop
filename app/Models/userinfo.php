@@ -2,22 +2,39 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
-class userinfo extends Model
+
+class Userinfo extends Model
 {
-    use HasFactory,Authenticatable, Notifiable;
+    use HasFactory;
+
     protected $fillable = [
+        'user_id',
         'fullname',
-        'username',
+        'age',
         'address',
-        'password',
         'mobile',
         'bloodtype',
-        'age',
-
+        'available',
+        'hospital_id',
     ];
 
+    // --- العلاقات ---
+
+    /**
+     * العلاقة العكسية: بيانات المتبرع تتبع لحساب مستخدم واحد
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * العلاقة العكسية: المتبرع قد يكون مرتبطاً بمشفى معين
+     */
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
 }
